@@ -1,6 +1,7 @@
 package com.omtians9425.dagger_fragmentfactory_navigation.di
 
 import android.app.Application
+import androidx.fragment.app.FragmentFactory
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -16,4 +17,6 @@ interface AppComponent {
         @BindsInstance
         fun application(app: Application): Builder
     }
+
+    fun fragmentFactory(): FragmentFactory
 }
