@@ -2,8 +2,8 @@ package com.omtians9425.dagger_fragmentfactory_navigation.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.omtians9425.dagger_fragmentfactory_navigation.FirstViewModel
-import com.omtians9425.dagger_fragmentfactory_navigation.SecondViewModel
+import com.omtians9425.dagger_fragmentfactory_navigation.ui.FirstViewModel
+import com.omtians9425.dagger_fragmentfactory_navigation.ui.SecondViewModel
 import com.omtians9425.dagger_fragmentfactory_navigation.ui.ViewModelFactory
 import dagger.Binds
 import dagger.Module
