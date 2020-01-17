@@ -1,23 +1,21 @@
 package com.omtians9425.dagger_fragmentfactory_navigation.ui
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.omtians9425.dagger_fragmentfactory_navigation.R
 import javax.inject.Inject
 
 
-class FirstFragment @Inject constructor() : Fragment() {
+class FirstFragment @Inject constructor(
+    factory: ViewModelProvider.Factory
+) : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            FirstFragment()
-    }
-
-    private lateinit var viewModel: FirstViewModel
+    private val viewModel by viewModels<FirstViewModel> { factory }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,11 +23,4 @@ class FirstFragment @Inject constructor() : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.first_fragment, container, false)
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FirstViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
