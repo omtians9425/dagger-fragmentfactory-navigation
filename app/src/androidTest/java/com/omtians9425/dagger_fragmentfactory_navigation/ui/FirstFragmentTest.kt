@@ -37,12 +37,13 @@ class FirstFragmentTest {
 
     @Test
     fun test() {
+        // Create a ViewModel with the fake Repository injected and pass it to Test-ViewModelFactory.
         val fakeRepo = SampleRepository()
         viewModelFactory = TestViewModelFactory(FirstViewModel(fakeRepo))
 
         val navController = mock(NavController::class.java)
         launchFragment(navController, viewModelFactory)
 
-        // THEN test
+        // THEN test!!
     }
 }
